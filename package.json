@@ -1,0 +1,27 @@
+{
+  "name": "chatgpt-prompter",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'npm run test && npm run build'",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "precommit": "yarn format && yarn test && git add ."
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.7",
+    "ts-jest": "^29.0.5",
+    "typescript": "^5.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  }
+}
