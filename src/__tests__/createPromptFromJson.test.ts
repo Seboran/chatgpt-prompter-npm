@@ -1,6 +1,6 @@
 import createPromptFromJson from '../createPromptFromJson'
 
-describe.skip('create prompt from json', () => {
+describe('create prompt from json', () => {
   test('creates prompt for typescript, jest, prettier and nodemon project', async () => {
     const package1json = require('./resources/package1.json')
     const promptedPackage1 = createPromptFromJson(package1json, 'fr')
