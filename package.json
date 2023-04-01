@@ -5,11 +5,11 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "build": "tsc",
+    "build": "rimraf dist && tsc && uglifyjs dist/*.js --compress --mangle --output dist/app.min.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'npm run test && npm run build'",
     "format": "prettier --write \"src/**/*.ts\"",
     "precommit": "yarn format && yarn test && git add .",
-    "start": "node dist/main.js"
+    "start": "node dist/app.min.js"
   },
   "devDependencies": {
     "@types/jest": "^29.5.0",
@@ -17,8 +17,10 @@
     "jest": "^29.5.0",
     "nodemon": "^2.0.22",
     "prettier": "^2.8.7",
+    "rimraf": "^4.4.1",
     "ts-jest": "^29.0.5",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "uglify-js": "^3.17.4"
   },
   "husky": {
     "hooks": {
