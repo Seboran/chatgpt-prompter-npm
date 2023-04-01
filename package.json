@@ -27,8 +27,5 @@
       "pre-commit": "npm run precommit"
     }
   },
-  "dependencies": {
-    "i18next": "^22.4.13",
-    "i18next-node-fs-backend": "^2.1.3"
-  }
+  "dependencies": {}
 }
