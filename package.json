@@ -1,8 +1,9 @@
 {
   "name": "chatgpt-prompter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "index.js",
   "license": "MIT",
+  "private": "true",
   "bin": {
     "chatgpt-prompter": "dist/app.min.js"
   },
