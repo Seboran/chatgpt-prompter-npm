@@ -1,10 +1,10 @@
 {
   "name": "chatgpt-prompter",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "main": "index.js",
   "license": "MIT",
   "bin": {
-    "prompt": "bin/app.min.js"
+    "prompt": "node bin/app.min.js"
   },
   "files": [
     "bin"
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "rimraf dist && tsc && uglifyjs dist/*.js --compress --mangle --output bin/app.min.js --preamble \"#!/usr/bin/env node\"",
+    "build": "rimraf dist && tsc && uglifyjs dist/*.js --compress --mangle --output bin/app.min.js",
     "format": "prettier --write \"src/**/*.ts\"",
     "precommit": "yarn format && yarn test && git add ."
   },
