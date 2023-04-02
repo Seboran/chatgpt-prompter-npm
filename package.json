@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "bin": {
-    "prompt": "node bin/app.min.js"
+    "prompt": "bin/prompt.js"
   },
   "files": [
     "bin"
@@ -14,7 +14,8 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "rimraf dist && tsc && uglifyjs dist/*.js --compress --mangle --output bin/app.min.js",
+    "build": "rimraf dist && tsc && uglifyjs dist/*.js --compress --mangle --output dist/app.min.js",
+    "build:bin": "rm bin/prompt.js && yarn build && echo \"#!/usr/bin/env node\" > bin/prompt.js && cat dist/app.min.js >> bin/prompt.js",
     "format": "prettier --write \"src/**/*.ts\"",
     "precommit": "yarn format && yarn test && git add ."
   },
