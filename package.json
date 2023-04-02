@@ -3,20 +3,20 @@
   "version": "0.0.4",
   "main": "index.js",
   "license": "MIT",
-  "private": "true",
   "bin": {
-    "chatgpt-prompter": "dist/app.min.js"
+    "chatgpt-prompter": "bin/app.min.js"
   },
+  "files": [
+    "bin"
+  ],
   "repository": {
     "url": "https://github.com/Seboran/chatgpt-prompter-npm"
   },
   "scripts": {
     "test": "jest",
-    "build": "rimraf dist && tsc && uglifyjs dist/*.js --compress --mangle --output dist/app.min.js",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'npm run test && npm run build'",
+    "build": "rimraf dist && tsc && uglifyjs dist/*.js --compress --mangle --output bin/app.min.js",
     "format": "prettier --write \"src/**/*.ts\"",
-    "precommit": "yarn format && yarn test && git add .",
-    "start": "node dist/app.min.js"
+    "precommit": "yarn format && yarn test && git add ."
   },
   "devDependencies": {
     "@types/jest": "^29.5.0",
