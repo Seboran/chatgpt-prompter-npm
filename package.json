@@ -6,6 +6,9 @@
   "bin": {
     "chatgpt-prompter": "dist/app.min.js"
   },
+  "repository": {
+    "url": "https://github.com/Seboran/chatgpt-prompter-npm"
+  },
   "scripts": {
     "test": "jest",
     "build": "rimraf dist && tsc && uglifyjs dist/*.js --compress --mangle --output dist/app.min.js",
