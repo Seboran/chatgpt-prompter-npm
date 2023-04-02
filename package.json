@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "rimraf dist && tsc && uglifyjs dist/*.js --compress --mangle --output bin/app.min.js",
+    "build": "rimraf dist && tsc && uglifyjs dist/*.js --compress --mangle --output bin/app.min.js --preamble \"#!/usr/bin/env node\"",
     "format": "prettier --write \"src/**/*.ts\"",
     "precommit": "yarn format && yarn test && git add ."
   },
