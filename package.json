@@ -1,8 +1,11 @@
 {
   "name": "chatgpt-prompter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "license": "MIT",
+  "bin": {
+    "chatgpt-prompter": "dist/app.min.js"
+  },
   "scripts": {
     "test": "jest",
     "build": "rimraf dist && tsc && uglifyjs dist/*.js --compress --mangle --output dist/app.min.js",
