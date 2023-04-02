@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "bin": {
-    "chatgpt-prompter": "bin/app.min.js"
+    "prompt": "bin/app.min.js"
   },
   "files": [
     "bin"
@@ -33,6 +33,5 @@
     "hooks": {
       "pre-commit": "npm run precommit"
     }
-  },
-  "dependencies": {}
+  }
 }
