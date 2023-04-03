@@ -1,10 +1,10 @@
 {
-  "name": "chatgpt-prompter",
-  "version": "0.0.8",
+  "name": "chatgpt-prompter-npm",
+  "version": "0.0.9",
   "main": "index.js",
   "license": "MIT",
   "bin": {
-    "prompt": "bin/prompt.js"
+    "prompt": "bin/main.js"
   },
   "files": [
     "bin"
@@ -14,8 +14,7 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "rimraf dist && tsc && uglifyjs dist/*.js --compress --mangle --output dist/app.min.js",
-    "build:bin": "rm bin/prompt.js && yarn build && echo \"#!/usr/bin/env node\" > bin/prompt.js && cat dist/app.min.js >> bin/prompt.js",
+    "build": "rimraf bin && tsc --outDir bin",
     "format": "prettier --write \"src/**/*.ts\"",
     "precommit": "yarn format && yarn test && git add ."
   },
@@ -27,8 +26,7 @@
     "prettier": "^2.8.7",
     "rimraf": "^4.4.1",
     "ts-jest": "^29.0.5",
-    "typescript": "^5.0.2",
-    "uglify-js": "^3.17.4"
+    "typescript": "^5.0.2"
   },
   "husky": {
     "hooks": {
