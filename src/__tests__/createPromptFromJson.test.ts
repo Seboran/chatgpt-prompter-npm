@@ -23,4 +23,9 @@ describe('create prompt from json', () => {
     expect(promptedExpressJson).toContain('eslint 7')
     expect(promptedExpressJson).toContain('prettier 4')
   })
+  test('create prompt for next project', () => {
+    const packageNextJson = require('./resources/nextPackage.json')
+    const promptedExpressJson = createPromptFromJson(packageNextJson, 'fr')
+    expect(promptedExpressJson).toContain('polka next')
+  })
 })

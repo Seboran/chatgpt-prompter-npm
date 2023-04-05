@@ -24,11 +24,26 @@ function extractDepencencyPair([key, versionWithPrefix]: [
   string,
   string
 ]): string {
-  const versionWithoutPrefix = removePrefix(versionWithPrefix)
-  return [key, semver.major(versionWithoutPrefix)].join(' ')
+  const majorVersion = getVersion(versionWithPrefix)
+  return [key, majorVersion].join(' ')
 }
 
-function removePrefix(versionWithPrefix: string): string {
+function getVersion(versionWithPrefix: string): number | string {
   const firstDigitPosition = versionWithPrefix.search(/\d/)
-  return versionWithPrefix.slice(firstDigitPosition)
+  if (isInvalidVersion(firstDigitPosition)) {
+    return versionWithPrefix
+  }
+  return getMajorVersion(versionWithPrefix, firstDigitPosition)
+}
+
+function getMajorVersion(
+  versionWithPrefix: string,
+  firstDigitPosition: number
+) {
+  const versionWithoutPrefix = versionWithPrefix.slice(firstDigitPosition)
+  return semver.major(versionWithoutPrefix)
+}
+
+function isInvalidVersion(firstDigitPosition: number) {
+  return firstDigitPosition == -1
 }
