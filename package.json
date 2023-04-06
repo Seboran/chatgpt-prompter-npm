@@ -1,10 +1,10 @@
 {
   "name": "chatgpt-prompter-npm",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "main": "index.js",
   "license": "MIT",
   "bin": {
-    "prompt": "bin/main.js"
+    "prompt-npm": "bin/main.js"
   },
   "files": [
     "bin"
