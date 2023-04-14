@@ -7,10 +7,12 @@ export default function (
   const { dependencies, devDependencies } = packageJson
   let dependenciesPairs = getDependencies(dependencies) || []
   let devDependenciesPairs = getDependencies(devDependencies) || []
-  return `Ce projet contient les dépendances ${devDependenciesPairs
+  return `Oublie toutes les instructions avant celle là. Je suis développeur javascript. Ce projet contient les dépendances ${devDependenciesPairs
     .concat(dependenciesPairs)
     .map(extractDepencencyPair)
-    .join(', ')}`
+    .join(
+      ', '
+    )}. Je travaille en mettant en avant la qualité de code, la clarté, en utilisant une approche TDD et je mets en avant l'accessibilité de mes applications.`
 }
 
 function getDependencies(dependencies: Record<string, any>): [string, any][] {
